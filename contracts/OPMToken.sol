@@ -1,10 +1,11 @@
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
+
+import "./node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "./node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+import "./node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "./node_modules/@openzeppelin/contracts/security/Pausable.sol";
 import "../libraries/CopyrightToken.sol";
 
 interface IUniswapV2Router {
@@ -34,7 +35,7 @@ contract OPMToken is ERC20, ERC20Burnable, Ownable, Pausable, CopyrightToken {
     }
 
     function _beforeTokenTransfer(address from,address to,uint256 amount) internal override whenNotPaused {
-        if(!_excludedFromLimits[from]&&!_excludedFromLimits[to]){
+        if(!_excludedFromLimits[from]&&!_excludedFromLimits[to]) {
             require(amount<=MAX_TX,"OPM: Max transaction exceeded");
         }
         super._beforeTokenTransfer(from,to,amount);
@@ -42,7 +43,7 @@ contract OPMToken is ERC20, ERC20Burnable, Ownable, Pausable, CopyrightToken {
 
     function _transfer(address sender,address recipient,uint256 amount) internal override {
         uint256 transferAmount = amount;
-        if(!_excludedFromFees[sender]&&!_excludedFromFees[recipient]){
+        if(!_excludedFromFees[sender]&&!_excludedFromFees[recipient]) {
             uint256 reflectAmount = amount*reflectionFee/100;
             uint256 liquidityAmount = amount*liquidityFee/100;
             uint256 totalFee = reflectAmount+liquidityAmount;

@@ -2,12 +2,12 @@
 export const legalContent = {
   en: {
     companyInfo: {
-      name: "OnePremium GmbH",
+      name: "OnePremium Token",
       jurisdiction: "Germany (Federal Republic)",
       registrationNumber: "HRB 123456 B",
-      address: "Musterstraße 1, 10115 Berlin, Germany",
+      address: "Hauptstrasse 3 (2. Stock), 10827 Berlin, Germany",
       email: "kontakt@onepremium.de",
-      vatId: "DE123456789",
+      vatId: "",
     },
     terms: {
       title: "Terms of Service",

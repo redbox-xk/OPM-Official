@@ -1,19 +1,3 @@
-# OPM-Official
+# OPM-Official Repository
 
-## Overview
-This project contains the institutional-grade architecture for the OPM-Official.
-
-## Folder Structure
-- `contracts/`
-  - Place for smart contracts.
-- `scripts/`
-  - Scripts for deployment and interaction.
-- `backend/`
-  - Backend services and APIs.
-- `frontend/`
-  - Frontend application setup.
-- `infrastructure/`
-  - Infrastructure as code (IaC) resources.
-
-## Getting Started
-Please start by checking each folder for its specific README and guidelines.
+This is a boilerplate repository for the OPM project. It serves as the foundation for a Web3-powered banking system. This repository will include smart contracts, backend services, frontend interfaces, and necessary infrastructure for deployment.

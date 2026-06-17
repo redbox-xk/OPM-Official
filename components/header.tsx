@@ -8,7 +8,7 @@ import { useWallet } from "@/hooks/use-wallet"
 import { LanguageSwitcher } from "./language-switcher"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Wallet, LogOut, ArrowRightLeft, Activity, FileCode, Key, CreditCard } from "lucide-react"
+import { Menu, Wallet, LogOut, ArrowRightLeft, Activity, FileCode, Key, CreditCard, Crown, Layers } from "lucide-react"
 import { ChainSelector } from "./chain-selector"
 
 export function Header() {
@@ -22,6 +22,8 @@ export function Header() {
     { href: "#roadmap", label: t.nav.roadmap },
     { href: "#tokenomics", label: t.nav.tokenomics },
     { href: "/dex", label: "DEX", icon: ArrowRightLeft },
+    { href: "/staking", label: "Membership", icon: Crown },
+    { href: "/liquidity-vault", label: "ALM Vault", icon: Layers },
     { href: "/price-watcher", label: "Markets", icon: Activity },
   ]
 

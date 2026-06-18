@@ -1,0 +1,63 @@
+# Pure Market Making config for $OPM
+#
+# PURPOSE: Provide two-sided depth on the OPM/ETH (or OPM/USDC) order book so that
+# real buyers and sellers experience tight spreads and low slippage. This is a
+# LIQUIDITY / EXECUTION-QUALITY tool, NOT a volume-generation tool.
+#
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │ LEGAL GUARDRAIL                                                              │
+# │ Wash trading (using a bot to fake volume) is illegal under EU/German         │
+# │ financial law (incl. MAR / WpHG). This config is intentionally configured    │
+# │ for genuine market making only: tight transparent spreads, real two-sided    │
+# │ depth, and inventory management. Do NOT cross your own orders or run buy and │
+# │ sell bots against each other to inflate reported volume.                     │
+# └────────────────────────────────────────────────────────────────────────────┘
+
+template_version: 1
+strategy: pure_market_making
+
+# --- Market ---
+exchange: uniswap            # or a CEX connector once OPM is listed
+market: OPM-WETH
+
+# --- Spread & sizing ---
+# Keep spreads tight so real users get good execution. Values are in %.
+bid_spread: 0.4
+ask_spread: 0.4
+
+# Order amount per level, denominated in the base asset (OPM).
+# Keep small relative to the 10,000 micro-supply.
+order_amount: 0.25
+
+# Multiple staggered levels add depth without large single orders.
+order_levels: 3
+order_level_amount: 0.1        # extra size added per deeper level
+order_level_spread: 0.3        # % distance between levels
+
+# --- Refresh / natural cadence ---
+# Randomized refresh so quotes look organic and stay near fair value.
+order_refresh_time: 60.0       # base seconds between refreshes
+order_refresh_tolerance_pct: 0.2
+max_order_age: 1800
+filled_order_delay: 12.0
+
+# --- Inventory management (prevents one-sided drift = prevents wash patterns) ---
+inventory_skew_enabled: true
+inventory_target_base_pct: 50.0    # aim to hold ~50% OPM / 50% quote
+inventory_range_multiplier: 1.0
+
+# --- Risk controls ---
+# Pull quotes if price moves violently; never chase.
+price_ceiling: -1              # -1 disables hard ceiling; set in production
+price_floor: -1
+ping_pong_enabled: false       # MUST stay false: ping-pong can resemble wash trades
+
+# --- Oracle / price source ---
+# Anchor quotes to an external reference so you never quote off a manipulated mid.
+price_source: external_market
+price_source_exchange: binance
+price_source_market: ETH-USDT
+
+# --- Hanging orders ---
+hanging_orders_enabled: true
+hanging_orders_cancel_pct: 10.0

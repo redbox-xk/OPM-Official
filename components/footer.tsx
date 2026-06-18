@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from "@/hooks/use-language"
 import { Twitter, Send, Globe, Mail, Shield, FileText, Users, Code2 } from "lucide-react"
-import { CONTACT_EMAIL, TWITTER_URL, TELEGRAM_URL, WEBSITE_URL, OPM_TOKEN_ADDRESS } from "@/lib/constants"
+import { CONTACT_EMAIL, TWITTER_URL, TELEGRAM_URL, WEBSITE_URL, OPM_TOKEN_ADDRESS, FOUNDER_NAME, FOUNDER_EMAIL } from "@/lib/constants"
 
 export function Footer() {
   const { language } = useLanguage()
@@ -34,10 +34,14 @@ export function Footer() {
                 : "The premium token ecosystem bridging digital assets with real-world benefits."}
             </p>
             <div className="text-xs text-muted-foreground/70 space-y-1">
-              <p>OnePremium GmbH</p>
-              <p>Musterstraße 1, 10115 Berlin</p>
-              <p>HRB 123456 B</p>
-              <p>USt-IdNr: DE123456789</p>
+              <p>OnePremium Ecosystem</p>
+              <p>Hauptstrasse 3 (2. Stock), 10827 Berlin</p>
+              <p>{language === "de" ? "Verantwortlich: " : "Legal Representative: "}{FOUNDER_NAME}</p>
+              <p>
+                <a href={`mailto:${FOUNDER_EMAIL}`} className="hover:text-foreground transition-colors">
+                  {FOUNDER_EMAIL}
+                </a>
+              </p>
             </div>
           </div>
 
@@ -248,15 +252,16 @@ export function Footer() {
             </p>
             <p>
               {language === "de"
-                ? "OnePremium GmbH ist in Deutschland registriert und arbeitet in Übereinstimmung mit den geltenden Vorschriften für digitale Vermögenswerte. Für weitere Informationen zu regulatorischen Anforderungen lesen Sie bitte unsere rechtlichen Dokumente."
-                : "OnePremium GmbH is registered in Germany and operates in compliance with applicable digital asset regulations. For more information about regulatory requirements, please review our legal documents."}
+                ? "Das OnePremium Ecosystem ist eine dezentrale digitale Utility-Schicht mit Sitz in Berlin, Deutschland, und arbeitet in Übereinstimmung mit den geltenden Vorschriften für digitale Vermögenswerte. OnePremium ist kein Wertpapier und stellt keine Beteiligung dar. Für weitere Informationen lesen Sie bitte unsere rechtlichen Dokumente."
+                : "The OnePremium Ecosystem is a decentralized digital utility layer based in Berlin, Germany, operating in compliance with applicable digital asset regulations. OnePremium is not a security and does not represent equity. For more information, please review our legal documents."}
             </p>
           </div>
         </div>
 
         <div className="mt-8 pt-6 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 OnePremium GmbH. {language === "de" ? "Alle Rechte vorbehalten." : "All rights reserved."}
+            © {new Date().getFullYear()} OnePremium Ecosystem.{" "}
+            {language === "de" ? "Alle Rechte vorbehalten." : "All rights reserved."}
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground/60">
             <span>{language === "de" ? "Betrieben von" : "Powered by"} Ethereum</span>

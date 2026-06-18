@@ -69,7 +69,7 @@ export function ContactSection() {
               <div className="text-center space-y-2 py-2">
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <Building2 className="h-4 w-4 text-[#D4A537]" />
-                  <span>{FOUNDER_NAME} - {language === "de" ? "Grunder & CEO" : "Founder & CEO"}</span>
+                  <span>{FOUNDER_NAME} - {language === "de" ? "Gründer, CEO & Visionär" : "Founder, CEO & Visionary"}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4 text-[#D4A537]" />

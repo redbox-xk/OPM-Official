@@ -9,8 +9,8 @@ export function TrustBadges() {
   const badges = [
     {
       icon: Shield,
-      label: language === "de" ? "Geprüfter Smart Contract" : "Audited Smart Contract",
-      detail: "Verified on Etherscan",
+      label: language === "de" ? "Vektoranalyse verifiziert" : "Vulnerability Scan Verified",
+      detail: "SolidityScan",
     },
     {
       icon: Lock,
@@ -24,13 +24,13 @@ export function TrustBadges() {
     },
     {
       icon: Scale,
-      label: language === "de" ? "Reguliert" : "Regulated",
-      detail: "German GmbH",
+      label: language === "de" ? "EU-Konform" : "EU Compliant",
+      detail: language === "de" ? "Berlin, Deutschland" : "Berlin, Germany",
     },
     {
       icon: Building,
-      label: language === "de" ? "Registriert" : "Registered",
-      detail: "HRB 123456 B",
+      label: language === "de" ? "Verifizierter Contract" : "Verified Contract",
+      detail: "Etherscan",
     },
     {
       icon: Award,

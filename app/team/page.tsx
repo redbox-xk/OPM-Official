@@ -29,7 +29,6 @@ import {
   ChevronRight,
 } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { CONTACT_EMAIL, FOUNDER_NAME, FOUNDER_EMAIL, COMPANY_ADDRESS, COMPANY_LOCATION } from "@/lib/constants"
 
 export default function TeamPage() {
@@ -431,13 +430,24 @@ export default function TeamPage() {
             <div className="p-8 bg-gradient-to-br from-[#D4A537]/10 to-card/40 backdrop-blur border border-[#D4A537]/20 rounded-2xl mb-6">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-28 h-28 rounded-2xl bg-gradient-to-br from-[#D4A537]/30 to-[#D4A537]/10 flex items-center justify-center border-2 border-[#D4A537]/30 overflow-hidden">
-                    <Image src="/images/opm-logo-200.png" alt={FOUNDER_NAME} width={112} height={112} className="object-cover" />
-                  </div>
+                  <div
+                    className="w-32 h-32 rounded-full bg-cover border-2 border-[#D4A537]/40 shadow-lg shadow-[#D4A537]/10"
+                    style={{
+                      backgroundImage: "url(/images/bardh-idrizi.jpeg)",
+                      backgroundPosition: "37% 28%",
+                      backgroundSize: "270%",
+                    }}
+                    role="img"
+                    aria-label={`${FOUNDER_NAME} - ${language === "de" ? "Gründer & CEO" : "Founder & CEO"}`}
+                  />
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl font-bold text-foreground mb-1">{FOUNDER_NAME}</h3>
-                  <p className="text-[#D4A537] font-semibold mb-2">{language === "de" ? "Grunder & CEO" : "Founder & CEO"}</p>
+                  <p className="text-[#D4A537] font-semibold mb-2">
+                    {language === "de"
+                      ? "Gründer, CEO, Token-Schöpfer & Visionär"
+                      : "Founder, CEO, Token Creator & Visionary"}
+                  </p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">{t.leadershipDescription}</p>
                   <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start text-xs text-muted-foreground">
                     <a href={`mailto:${FOUNDER_EMAIL}`} className="flex items-center gap-1 hover:text-[#D4A537] transition-colors">

@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useLanguage } from "@/hooks/use-language"
 import { useWallet } from "@/hooks/use-wallet"
 import { LanguageSwitcher } from "./language-switcher"
+import { ThemeToggle } from "./theme-toggle"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Wallet, LogOut, ArrowRightLeft, Activity, FileCode, Key, CreditCard, Crown, Layers } from "lucide-react"
@@ -56,6 +57,7 @@ export function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <LanguageSwitcher />
 
           {isConnected ? (

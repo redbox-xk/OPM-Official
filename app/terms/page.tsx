@@ -51,17 +51,17 @@ export default function TermsPage() {
               </p>
               <p>
                 <span className="text-foreground font-medium">
-                  {language === "de" ? "Registernummer" : "Registration"}:
+                  {language === "de" ? "Verantwortlich" : "Legal Representative"}:
                 </span>{" "}
-                {companyInfo.registrationNumber}
+                {companyInfo.legalRepresentative}
               </p>
               <p>
                 <span className="text-foreground font-medium">{language === "de" ? "Adresse" : "Address"}:</span>{" "}
                 {companyInfo.address}
               </p>
               <p>
-                <span className="text-foreground font-medium">{language === "de" ? "USt-IdNr" : "VAT ID"}:</span>{" "}
-                {companyInfo.vatId}
+                <span className="text-foreground font-medium">{language === "de" ? "E-Mail" : "Email"}:</span>{" "}
+                {companyInfo.email}
               </p>
             </div>
           </div>

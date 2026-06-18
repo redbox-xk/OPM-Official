@@ -2,12 +2,11 @@
 export const legalContent = {
   en: {
     companyInfo: {
-      name: "OnePremium Token",
+      name: "OnePremium Ecosystem",
       jurisdiction: "Germany (Federal Republic)",
-      registrationNumber: "HRB 123456 B",
+      legalRepresentative: "Bardh Idrizi",
       address: "Hauptstrasse 3 (2. Stock), 10827 Berlin, Germany",
       email: "kontakt@onepremium.de",
-      vatId: "",
     },
     terms: {
       title: "Terms of Service",
@@ -15,7 +14,7 @@ export const legalContent = {
       sections: [
         {
           title: "1. Acceptance of Terms",
-          content: `By accessing or using the OnePremium platform ("Platform"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not access or use the Platform. These Terms constitute a legally binding agreement between you and OnePremium GmbH ("Company", "we", "us", or "our").`,
+          content: `By accessing or using the OnePremium platform ("Platform"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not access or use the Platform. These Terms constitute a legally binding agreement between you and OnePremium ("Company", "we", "us", or "our").`,
         },
         {
           title: "2. Eligibility",
@@ -27,7 +26,7 @@ export const legalContent = {
         },
         {
           title: "4. Token Characteristics",
-          content: `The OPM token is a utility token and does not represent equity, debt, or any ownership interest in OnePremium GmbH. Token holders do not have voting rights in corporate matters, dividend rights, or claims to company assets. The token provides access to platform features and partner benefits only.`,
+          content: `The OPM token is a utility token and does not represent equity, debt, or any ownership interest in OnePremium. Token holders do not have voting rights in corporate matters, dividend rights, or claims to company assets. The token provides access to platform features and partner benefits only.`,
         },
         {
           title: "5. Risk Acknowledgment",
@@ -43,11 +42,11 @@ export const legalContent = {
         },
         {
           title: "8. Intellectual Property",
-          content: `All content, trademarks, and intellectual property on the Platform are owned by OnePremium GmbH. You are granted a limited, non-exclusive license to access and use the Platform for personal, non-commercial purposes. You may not copy, modify, or distribute any content without written permission.`,
+          content: `All content, trademarks, and intellectual property on the Platform are owned by OnePremium. You are granted a limited, non-exclusive license to access and use the Platform for personal, non-commercial purposes. You may not copy, modify, or distribute any content without written permission.`,
         },
         {
           title: "9. Limitation of Liability",
-          content: `To the maximum extent permitted by law, OnePremium GmbH shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or tokens. Our total liability shall not exceed the amount you paid for tokens in the preceding 12 months.`,
+          content: `To the maximum extent permitted by law, OnePremium shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or tokens. Our total liability shall not exceed the amount you paid for tokens in the preceding 12 months.`,
         },
         {
           title: "10. Governing Law",
@@ -59,7 +58,7 @@ export const legalContent = {
         },
         {
           title: "12. Contact",
-          content: `For questions about these Terms, contact us at kontakt@onepremium.de or OnePremium GmbH, Musterstraße 1, 10115 Berlin, Germany.`,
+          content: `For questions about these Terms, contact us at kontakt@onepremium.de or OnePremium Ecosystem, Hauptstrasse 3 (2. Stock), 10827 Berlin, Germany.`,
         },
       ],
     },
@@ -69,11 +68,11 @@ export const legalContent = {
       sections: [
         {
           title: "1. Introduction",
-          content: `OnePremium GmbH ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Platform. We comply with the EU General Data Protection Regulation (GDPR) and German data protection laws.`,
+          content: `OnePremium ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Platform. We comply with the EU General Data Protection Regulation (GDPR) and German data protection laws.`,
         },
         {
           title: "2. Data Controller",
-          content: `The data controller responsible for your personal data is:\n\nOnePremium GmbH\nMusterstraße 1\n10115 Berlin, Germany\nEmail: kontakt@onepremium.de\nData Protection Officer: datenschutz@onepremium.de`,
+          content: `The data controller responsible for your personal data is:\n\nOnePremium Ecosystem\nLegal Representative: Bardh Idrizi\nHauptstrasse 3 (2. Stock)\n10827 Berlin, Germany\nEmail: kontakt@onepremium.de\nData Protection Officer: datenschutz@onepremium.de`,
         },
         {
           title: "3. Data We Collect",
@@ -193,7 +192,7 @@ export const legalContent = {
         },
         {
           title: "10. Acknowledgment",
-          content: `By using the Platform, you acknowledge that you have read, understood, and accepted these risks. You confirm that you are making an independent decision and are not relying on any representations by OnePremium GmbH.`,
+          content: `By using the Platform, you acknowledge that you have read, understood, and accepted these risks. You confirm that you are making an independent decision and are not relying on any representations by OnePremium.`,
         },
       ],
     },
@@ -203,7 +202,7 @@ export const legalContent = {
       sections: [
         {
           title: "1. Introduction",
-          content: `OnePremium GmbH is committed to preventing money laundering, terrorist financing, and other financial crimes. This KYC/AML Policy outlines our compliance procedures in accordance with German Anti-Money Laundering Act (GwG) and EU Anti-Money Laundering Directives.`,
+          content: `OnePremium is committed to preventing money laundering, terrorist financing, and other financial crimes. This KYC/AML Policy outlines our compliance procedures in accordance with German Anti-Money Laundering Act (GwG) and EU Anti-Money Laundering Directives.`,
         },
         {
           title: "2. Risk-Based Approach",
@@ -242,12 +241,11 @@ export const legalContent = {
   },
   de: {
     companyInfo: {
-      name: "OnePremium GmbH",
+      name: "OnePremium Ecosystem",
       jurisdiction: "Deutschland (Bundesrepublik)",
-      registrationNumber: "HRB 123456 B",
-      address: "Musterstraße 1, 10115 Berlin, Deutschland",
+      legalRepresentative: "Bardh Idrizi",
+      address: "Hauptstrasse 3 (2. Stock), 10827 Berlin, Deutschland",
       email: "kontakt@onepremium.de",
-      vatId: "DE123456789",
     },
     terms: {
       title: "Nutzungsbedingungen",
@@ -255,7 +253,7 @@ export const legalContent = {
       sections: [
         {
           title: "1. Annahme der Bedingungen",
-          content: `Durch den Zugriff auf oder die Nutzung der OnePremium-Plattform ("Plattform") erklären Sie sich mit diesen Nutzungsbedingungen ("Bedingungen") einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, dürfen Sie die Plattform nicht nutzen. Diese Bedingungen stellen einen rechtsverbindlichen Vertrag zwischen Ihnen und der OnePremium GmbH ("Gesellschaft", "wir", "uns" oder "unser") dar.`,
+          content: `Durch den Zugriff auf oder die Nutzung der OnePremium-Plattform ("Plattform") erklären Sie sich mit diesen Nutzungsbedingungen ("Bedingungen") einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, dürfen Sie die Plattform nicht nutzen. Diese Bedingungen stellen einen rechtsverbindlichen Vertrag zwischen Ihnen und der OnePremium ("Gesellschaft", "wir", "uns" oder "unser") dar.`,
         },
         {
           title: "2. Berechtigung",
@@ -267,7 +265,7 @@ export const legalContent = {
         },
         {
           title: "4. Token-Eigenschaften",
-          content: `Der OPM-Token ist ein Utility-Token und stellt keine Beteiligung, Schuld oder Eigentumsinteresse an der OnePremium GmbH dar. Token-Inhaber haben keine Stimmrechte in Unternehmensangelegenheiten, Dividendenrechte oder Ansprüche auf Unternehmensvermögen. Der Token bietet nur Zugang zu Plattformfunktionen und Partnervorteilen.`,
+          content: `Der OPM-Token ist ein Utility-Token und stellt keine Beteiligung, Schuld oder Eigentumsinteresse an der OnePremium dar. Token-Inhaber haben keine Stimmrechte in Unternehmensangelegenheiten, Dividendenrechte oder Ansprüche auf Unternehmensvermögen. Der Token bietet nur Zugang zu Plattformfunktionen und Partnervorteilen.`,
         },
         {
           title: "5. Risikohinweis",
@@ -283,11 +281,11 @@ export const legalContent = {
         },
         {
           title: "8. Geistiges Eigentum",
-          content: `Alle Inhalte, Marken und geistiges Eigentum auf der Plattform gehören der OnePremium GmbH. Ihnen wird eine beschränkte, nicht-exklusive Lizenz zur Nutzung der Plattform für persönliche, nicht-kommerzielle Zwecke gewährt. Sie dürfen keine Inhalte ohne schriftliche Genehmigung kopieren, modifizieren oder verbreiten.`,
+          content: `Alle Inhalte, Marken und geistiges Eigentum auf der Plattform gehören der OnePremium. Ihnen wird eine beschränkte, nicht-exklusive Lizenz zur Nutzung der Plattform für persönliche, nicht-kommerzielle Zwecke gewährt. Sie dürfen keine Inhalte ohne schriftliche Genehmigung kopieren, modifizieren oder verbreiten.`,
         },
         {
           title: "9. Haftungsbeschränkung",
-          content: `Im maximal gesetzlich zulässigen Umfang haftet die OnePremium GmbH nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, einschließlich entgangener Gewinne, Daten oder Token. Unsere Gesamthaftung ist auf den Betrag begrenzt, den Sie in den letzten 12 Monaten für Token bezahlt haben.`,
+          content: `Im maximal gesetzlich zulässigen Umfang haftet die OnePremium nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, einschließlich entgangener Gewinne, Daten oder Token. Unsere Gesamthaftung ist auf den Betrag begrenzt, den Sie in den letzten 12 Monaten für Token bezahlt haben.`,
         },
         {
           title: "10. Anwendbares Recht",
@@ -299,7 +297,7 @@ export const legalContent = {
         },
         {
           title: "12. Kontakt",
-          content: `Bei Fragen zu diesen Bedingungen kontaktieren Sie uns unter kontakt@onepremium.de oder OnePremium GmbH, Musterstraße 1, 10115 Berlin, Deutschland.`,
+          content: `Bei Fragen zu diesen Bedingungen kontaktieren Sie uns unter kontakt@onepremium.de oder OnePremium Ecosystem, Hauptstrasse 3 (2. Stock), 10827 Berlin, Deutschland.`,
         },
       ],
     },
@@ -309,11 +307,11 @@ export const legalContent = {
       sections: [
         {
           title: "1. Einleitung",
-          content: `Die OnePremium GmbH ("wir", "uns", "unser") verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Datenschutzerklärung erklärt, wie wir Ihre Daten erfassen, verwenden, offenlegen und schützen, wenn Sie unsere Plattform nutzen. Wir halten die EU-Datenschutz-Grundverordnung (DSGVO) und deutsche Datenschutzgesetze ein.`,
+          content: `Die OnePremium ("wir", "uns", "unser") verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Datenschutzerklärung erklärt, wie wir Ihre Daten erfassen, verwenden, offenlegen und schützen, wenn Sie unsere Plattform nutzen. Wir halten die EU-Datenschutz-Grundverordnung (DSGVO) und deutsche Datenschutzgesetze ein.`,
         },
         {
           title: "2. Verantwortlicher",
-          content: `Der für Ihre personenbezogenen Daten Verantwortliche ist:\n\nOnePremium GmbH\nMusterstraße 1\n10115 Berlin, Deutschland\nE-Mail: kontakt@onepremium.de\nDatenschutzbeauftragter: datenschutz@onepremium.de`,
+          content: `Der für Ihre personenbezogenen Daten Verantwortliche ist:\n\nOnePremium Ecosystem\nVerantwortlich: Bardh Idrizi\nHauptstrasse 3 (2. Stock)\n10827 Berlin, Deutschland\nE-Mail: kontakt@onepremium.de\nDatenschutzbeauftragter: datenschutz@onepremium.de`,
         },
         {
           title: "3. Erhobene Daten",
@@ -433,7 +431,7 @@ export const legalContent = {
         },
         {
           title: "10. Bestätigung",
-          content: `Durch die Nutzung der Plattform bestätigen Sie, dass Sie diese Risiken gelesen, verstanden und akzeptiert haben. Sie bestätigen, dass Sie eine unabhängige Entscheidung treffen und sich nicht auf Zusicherungen der OnePremium GmbH verlassen.`,
+          content: `Durch die Nutzung der Plattform bestätigen Sie, dass Sie diese Risiken gelesen, verstanden und akzeptiert haben. Sie bestätigen, dass Sie eine unabhängige Entscheidung treffen und sich nicht auf Zusicherungen der OnePremium verlassen.`,
         },
       ],
     },
@@ -443,7 +441,7 @@ export const legalContent = {
       sections: [
         {
           title: "1. Einleitung",
-          content: `Die OnePremium GmbH verpflichtet sich zur Verhinderung von Geldwäsche, Terrorismusfinanzierung und anderen Finanzverbrechen. Diese KYC/AML-Richtlinie beschreibt unsere Compliance-Verfahren gemäß dem deutschen Geldwäschegesetz (GwG) und den EU-Geldwäscherichtlinien.`,
+          content: `Die OnePremium verpflichtet sich zur Verhinderung von Geldwäsche, Terrorismusfinanzierung und anderen Finanzverbrechen. Diese KYC/AML-Richtlinie beschreibt unsere Compliance-Verfahren gemäß dem deutschen Geldwäschegesetz (GwG) und den EU-Geldwäscherichtlinien.`,
         },
         {
           title: "2. Risikobasierter Ansatz",

@@ -72,21 +72,58 @@ export async function GET(req: NextRequest) {
         let volume = 45000
         let marketCap = price * 10000
         let holders = 21
+        let source = "fallback"
 
+        // Primary source: CoinMarketCap DEX gateway (matches dex.coinmarketcap.com token page)
         try {
-          const dsRes = await fetch(`https://api.dexscreener.com/latest/dex/pairs/ethereum/${POOL_ADDRESS}`, {
-            next: { revalidate: 30 },
-          })
-          if (dsRes.ok) {
-            const dsData = await dsRes.json()
-            if (dsData.pair) {
-              price = parseFloat(dsData.pair.priceUsd) || price
-              priceChange = parseFloat(dsData.pair.priceChange?.h24) || priceChange
-              volume = parseFloat(dsData.pair.volume?.h24) || volume
-              marketCap = parseFloat(dsData.pair.fdv) || marketCap
+          const cmcRes = await fetch(
+            `https://api.coinmarketcap.com/dexer/v3/platformpair/pair-detail?platform-id=1&address=${POOL_ADDRESS}&t=${Date.now()}`,
+            {
+              headers: {
+                Accept: "application/json",
+                "User-Agent":
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+                Referer: `https://dex.coinmarketcap.com/token/ethereum/${OPM_ADDRESS}/`,
+              },
+              next: { revalidate: 30 },
+            }
+          )
+          if (cmcRes.ok) {
+            const cmcJson = await cmcRes.json()
+            const d = cmcJson?.data ?? {}
+            const p = parseFloat(d.priceUsd ?? d.price ?? d.priceUSD)
+            const pc = parseFloat(d.priceChangePercentage24h ?? d.priceChange24h ?? d.priceChange)
+            const v = parseFloat(d.volume24h ?? d.volumeUsd24h ?? d.volume)
+            const mc = parseFloat(d.fullyDilutedValuation ?? d.fdv ?? d.marketCap)
+            if (p && !Number.isNaN(p)) {
+              price = p
+              source = "coinmarketcap"
+              if (!Number.isNaN(pc)) priceChange = pc
+              if (!Number.isNaN(v)) volume = v
+              marketCap = !Number.isNaN(mc) && mc > 0 ? mc : price * 10000
             }
           }
-        } catch { /* fallback */ }
+        } catch { /* fall through to DexScreener */ }
+
+        // Secondary source: DexScreener (same Ethereum pool)
+        if (source !== "coinmarketcap") {
+          try {
+            const dsRes = await fetch(`https://api.dexscreener.com/latest/dex/pairs/ethereum/${POOL_ADDRESS}`, {
+              next: { revalidate: 30 },
+            })
+            if (dsRes.ok) {
+              const dsData = await dsRes.json()
+              const pair = dsData.pair ?? dsData.pairs?.[0]
+              if (pair) {
+                price = parseFloat(pair.priceUsd) || price
+                priceChange = parseFloat(pair.priceChange?.h24) || priceChange
+                volume = parseFloat(pair.volume?.h24) || volume
+                marketCap = parseFloat(pair.fdv) || price * 10000
+                source = "dexscreener"
+              }
+            }
+          } catch { /* fallback */ }
+        }
 
         try {
           if (ETHERSCAN_KEY) {
@@ -101,7 +138,7 @@ export async function GET(req: NextRequest) {
           }
         } catch { /* fallback */ }
 
-        return NextResponse.json({ price, priceChange, volume, marketCap, holders, totalSupply: 10000 })
+        return NextResponse.json({ price, priceChange, volume, marketCap, holders, totalSupply: 10000, source })
       }
 
       case "transactions": {

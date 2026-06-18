@@ -1,0 +1,24 @@
+version: "3.9"
+
+# Lightweight, cloud-hostable Hummingbot instance for OPM market making.
+# Deploy on a small AWS/DigitalOcean droplet. Run:
+#   docker compose up -d
+#   docker attach opm-hummingbot   # to access the Hummingbot CLI
+#
+# Mount your config + secrets via the ./conf and ./logs volumes. NEVER bake
+# private keys or API keys into the image; pass them at runtime only.
+
+services:
+  hummingbot:
+    container_name: opm-hummingbot
+    image: hummingbot/hummingbot:latest
+    restart: unless-stopped
+    volumes:
+      - ./conf:/home/hummingbot/conf
+      - ./logs:/home/hummingbot/logs
+      - ./data:/home/hummingbot/data
+    environment:
+      - CONFIG_PASSWORD=${HUMMINGBOT_PASSWORD}
+    tty: true
+    stdin_open: true
+    network_mode: host
